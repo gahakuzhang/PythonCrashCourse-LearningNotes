@@ -1,1 +1,1 @@
-# PythonCrashCourse-LearingNotes
+# PythonCrashCourse-LearningNotes
