@@ -2,7 +2,7 @@
 idols=['nanamin','miona','nachan','maiyan']
 for idol in idols:
     print(idol.title()+',ganbare!')
-print('Arigatou,minna!')
+print('Doryoku,Kansha,Egao!')
 
 
 
