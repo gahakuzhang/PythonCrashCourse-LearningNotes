@@ -48,7 +48,7 @@ print("Here is a sorted list:\t" + str(sorted(nogi)))
 print("Here is a sorted list:\n\t" + str(sorted(nogi)))
 
 print(nogi)
-['hashimoto', 'hori', 'nishino', 'ikuta']
+#['hashimoto', 'hori', 'nishino', 'ikuta']
 
 sorted(nogi, reverse=True)
 #['nishino', 'ikuta', 'hori', 'hashimoto']
@@ -57,9 +57,9 @@ print(sorted(nogi, reverse=True))
 #['nishino', 'ikuta', 'hori', 'hashimoto']
 
 print(nogi)
-['hashimoto', 'hori', 'nishino', 'ikuta']
+#['hashimoto', 'hori', 'nishino', 'ikuta']
 nogi
-['hashimoto', 'hori', 'nishino', 'ikuta']
+#['hashimoto', 'hori', 'nishino', 'ikuta']
 
 for idol in nogi:
     print(idol)
