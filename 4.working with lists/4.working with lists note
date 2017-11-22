@@ -1,10 +1,9 @@
-1
+
 #4.1.3 for循环结束后执行操作
 idols=['nanamin','miona','nachan','maiyan']
 for idol in idols:
     print(idol.title()+',ganbare!')
 print('Arigatou,minna!')
-
 
 #4.3.1 创建数值列表，使用函数range()
 numbers=list(range(1,5))
