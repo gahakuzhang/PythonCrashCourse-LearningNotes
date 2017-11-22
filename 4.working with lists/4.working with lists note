@@ -1,5 +1,4 @@
-
-
+1
 #4.1.3 for循环结束后执行操作
 idols=['nanamin','miona','nachan','maiyan']
 for idol in idols:
@@ -9,9 +8,8 @@ print('Arigatou,minna!')
 
 #4.3.1 创建数值列表，使用函数range()
 numbers=list(range(1,5))
-print(numbers)
-#[1,2,3,4]
-#执行到第二个数字停止
+print(numbers)#[1,2,3,4]
+(#执行到第二个数字停止
 
 even_numbers=list(range(2,12,2))
 print(even_numbers)
@@ -20,8 +18,7 @@ print(even_numbers)
 squares=[]
 for value in range(1,11):
     square=value**2
-    squares.append(square)
-print(squares)
+    squares.append(square)print(squares)
 
 #4.3.4 List Comprehensions 列表解析
 squares=[value**2 for value in range(1,11)]
@@ -29,7 +26,7 @@ print(squares)
 
 #4.4.1 Slicing a list 切片
 idols=['nanamin','miona','nachan','maiyan','rentan','yuki']
-print(idols[1:4]) #从第2个元素打印到第4个元素，即['miona', 'nachan', 'maiyan']。4意味着终止于4
+print(idols[1:4]) #从1(第2个元素)打印到3(第4个元素)，即['miona', 'nachan', 'maiyan']。4意味着终止于4。
 print(idols[:4]) #从头打印到第4个元素，['nanamin', 'miona', 'nachan', 'maiyan']
 print(idols[2:]) #从第3个打印到最后，['nachan', 'maiyan', 'rentan', 'yuki']
 print(idols[-2:]) #从倒数第2个打印到最后，['rentan', 'yuki']
@@ -48,7 +45,6 @@ print('My favorite members are:')
 print(my_idols)
 print('\nyc\'s favorite members are:')
 print(yc_idols)
-
 #4.4.3 copying a list 复制列表-不使用切片
 my_idols=['nanamin','rentan','yuki']
 #此路不通
