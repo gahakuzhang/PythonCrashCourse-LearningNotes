@@ -1,1 +1,55 @@
+#6.1 dictionary使用{},使用键-值（key-value）存储
+alien_0={'color':'green','points':5}
+print(alien_0['color'])
+print(alien_0['points'])
+
+#6.2.1 访问字典中的值
+alien_0={'color':'green','points':5}
+new_points=alien_0['points']
+print('You\'ve just earned '+str(new_points)+' points!')
+
+#6.2.2 添加key-value键-值对
+alien_0={'color':'green','points':5}
+print(alien_0)
+alien_0['x_position']=0
+alien_0['y_position']=25
+print(alien_0)
+
+#6.2.3 先定义1个空字典
+alien_0={}
+alien_0['color']='green'
+alien_0['points']=5
+print(alien_0)
+
+#6.2.4 修改value
+alien_0={'color':'green'}
+print('The alien is '+alien_0['color']+'.')
+alien_0['color']='yellow'
+print('The alien is now '+alien_0['color']+'.')
+#pratice
+idol_age={'nanamin':25,'rentan':13,'yuki':16}
+print('This year rentan is '+str(idol_age['rentan'])+' years old.')
+after_years=3
+idol_age['rentan']=idol_age['rentan']+after_years
+print('After '+str(after_years)+' years',
+      'rentan will be '+str(idol_age['rentan'])+' years old.')
+
+#6.2.5 删除键-值对
+idol_age={'nanamin':25,'rentan':13,'yuki':16,'kazumin':23}
+del idol_age['kazumin']
+print(idol_age)
+
+#6.2.6由类似对象组成的dictionary
+#为什么没有自动缩进？？？
+#最后的key-value后再加入一个逗号，为以后插入key-value做准备
+favorite_idols={
+    'me':'nanamin',
+    'yc':'kazumin',
+    'A':'nachan',
+    'B':'maiyan',
+    }
+print("yc's favorite idol is "+
+      str(favorite_idols['yc'].title())+".")
+
+
 
