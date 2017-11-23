@@ -114,7 +114,101 @@ for name in sorted(favorite_idols):
           +favorite_idols[name]+"!")
 
 #6.4 嵌套 nesting
-#6.4.1 字典列表
+#6.4.1 a list of dictionaries
+aliens=[]
+for alien_number in range(30):
+    new_alien={'color':'green','points':5,'speed':'slow',}
+    aliens.append(new_alien)
+
+for alien in aliens[:5]:
+    print(alien)
+print('...')
+print("The total number of aliens: "+str(len(aliens)))
+
+#6.4.2 a list in a dictionary
+#pizza
+pizza={
+      'crust':'thick',
+      'topping':['mushrooms','extra cheese'],
+      }
+print("You have ordered a "+pizza['crust']+'-crust pizza with the following toppings:')
+for topping in pizza['topping']:
+      print("\t"+topping)
+
+#favorite_languages
+favorite_languages={
+    'jen':['python','ruby'],
+    'sarah':'c',
+    'edward':['ruby','go'],
+    'phil':['python','haskell'],
+    }
+for name,languages in favorite_languages.items():
+    print(name.title()+"'s favorite language is:")
+    for language in languages:
+        print("\t"+language)
+#如果不使用第2个for循环，直接print(languages)，会出现类似['python', 'ruby']的结果
+
+#6.4.3 a dictionary in a dictionary
+fans={
+    'ghk':{
+        'age':25,
+        'food':'ramen',
+        'idol':'nachan',
+    },
+    'yc':{
+        'age':27,
+        'food':'fried chicken',
+        'idol':'kazumin',
+    },
+}
+for fansname,fansinfo in fans.items():
+    print("fan's name: "+fansname)
+    for faninfo in fansinfo:
+        print(faninfo['food'])
+#报错： print(faninfo['food']) TypeError: string indices must be integers
+#最后两行改为print(fansinfo['food'])就没问题了
+
+fans={
+    'ghk':{
+        'age':25,
+        'food':'ramen',
+        'idol':'nachan',
+    },
+    'yc':{
+        'age':27,
+        'food':'fried chicken',
+        'idol':'kazumin',
+    },
+}
+for fansname,fansinfo in fans.items():
+    print("fan's name: "+fansname)
+    for fansinfo_name,fansinfo_content in fansinfo:
+        print(fansinfo_content)
+#报错：for fansinfo_name,fansinfo_content in fansinfo:
+# ValueError: too many values to unpack (expected 2)
+
+fans={
+    'ghk':{
+        'age':25,
+        'food':'ramen',
+        'idol':'nachan',
+    },
+    'yc':{
+        'age':27,
+        'food':'fried chicken',
+        'idol':'kazumin',
+    },
+}
+for fansname,fansinfo in fans.items():
+    print("fan's name: "+fansname)
+    age=fansinfo['age']
+    food=fansinfo['food']
+    idol=fansinfo['idol']
+    print(age)
+    print(food.title())
+    print(idol.title())
+#未报错
+#或者最后6行改为print(fansinfo['age'])...
 
 
 
