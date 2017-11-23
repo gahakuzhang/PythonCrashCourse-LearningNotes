@@ -14,6 +14,8 @@ print(alien_0)
 alien_0['x_position']=0
 alien_0['y_position']=25
 print(alien_0)
+#6.2.2 key-value的排列顺序和添加顺序不同
+#Python只关心key-vlaue的对应关系，不关心添加顺序
 
 #6.2.3 先定义1个空字典
 alien_0={}
@@ -50,6 +52,80 @@ favorite_idols={
     }
 print("yc's favorite idol is "+
       str(favorite_idols['yc'].title())+".")
+
+#6.3 遍历字典 looping through a dictionary
+#6.3.1 遍历所有键值对
+#6.3.1 使用items.()
+#遍历字典时，键值对的返回顺序和存储顺序不同
+idol_name1={
+    'username':'73',
+    'first_name':'nanami',
+    'last_name':'hashimoto',
+    }
+for key,value in idol_name1.items():
+    print('\nkey: '+key)
+    print('value: '+value)
+
+favorite_idols={
+    'ghk':'nachan',
+    'yc':'kazumin',
+    'a':'maiyan',
+    'b':'erika',
+    }
+for name,idol in favorite_idols.items():
+    print(name.title()+"'s favorite idol is "+
+          idol.title()+".")
+
+#6.3.2 遍历所有键
+favorite_idols={
+    'ghk':'nachan',
+    'yc':'kazumin',
+    'a':'maiyan',
+    'b':'erika',
+    }
+for name in favorite_idols.items():
+    print(name.title())
+
+#注意favorite_idols[name]的用法，不需要另外定义idol
+favorite_idols={
+    'ghk':'nachan',
+    'yc':'kazumin',
+    'a':'maiyan',
+    'b':'erika',
+    }
+iihito=['ghk','yc']
+for name in favorite_idols.keys():
+    print(name)
+    if name in iihito:
+        print("Hi "+name.title()+
+              " , thanks for supporting "+
+              favorite_idols[name].title()+".")
+
+#6.3.3 按顺序遍历所有key
+#注意sorted的位置
+favorite_idols={
+    'ghk':'nachan',
+    'yc':'kazumin',
+    'a':'maiyan',
+    'b':'erika',
+    }
+for name in sorted(favorite_idols):
+    print(name.title()+", thank you for supporting "
+          +favorite_idols[name]+"!")
+
+#6.4 嵌套 nesting
+#6.4.1 字典列表
+
+
+
+
+
+
+
+
+
+
+
 
 
 
