@@ -1,0 +1,4 @@
+#7.1 input工作原理
+#input的参数是向用户的提示
+message=input('Tell me sth, and I will repeat it back to u: ')
+print(message)
