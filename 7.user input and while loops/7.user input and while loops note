@@ -1,4 +1,105 @@
 #7.1 input工作原理
-#input的参数是向用户的提示
+#input()让程序暂停，用户输入按回车后继续运行。输入存储在变量中。
+#input()的参数是向用户的提示
 message=input('Tell me sth, and I will repeat it back to u: ')
 print(message)
+#7.1.1
+#提示超过一行时，可以将提示存在变量中
+#+=在字符串末尾增加字符串
+prompt="If you tell us who you are, we can personalize the messages you see."
+prompt+="\nWhat's your first name? "
+name=input(prompt)
+print("\nHello！"+name+"!")
+
+#7.1.2 使用int()获得数值输入
+height=input("How tall are you, in inches? ")
+height=int(height)
+if height>=36:
+    print("You are tall enough!")
+else:
+    print("\nYou will be able to ride when you are a little older.")
+
+#7.1.3 求模运算符%，相除后返回余数
+number=input("Enter a number, and I'll tell you if it's even or odd: ")
+number=int(number)
+if number%2==0:
+    print("The number "+number+" is even")
+else:
+    print("The number "+number+" is odd")
+
+#7.2 while loops
+#7.2.1 counting
+current_number=1
+while current_number<=5:
+    print(current_number)
+    current_number+=1
+#current_number+=1是current_number=current_number+1的简写
+
+#7.2.2 letting the user choose when to quit
+#充分理解程序运行的顺序
+prompt="\nTell me something, and I will repeat it back to u: "
+prompt+="\nEnter 'quit' to end of this program. "
+message=""
+while message!='quit':
+    message=input(prompt)
+    if message!='quit':
+        print(message)
+#首次执行while时，因为用户还没有输入，无法比较。因为先定义一个空字符串进行比较
+#错误示例，以下程序会进入死循环
+#同时input的位置也是错的，创建多行字符串的时候不应写入input()
+#prompt=input("\nTell me something, and I will repeat it back to u: ")
+#prompt+="\nEnter 'quit' to end of this program. "
+#while prompt!='quit':
+    #print(prompt)
+
+#7.2.3 using a flag 标志
+# 注意True和False首字母要大写
+#这个例子中flag为active
+prompt="\nTell me something, and I will repeat it back to u: "
+prompt+="\nEnter 'quit' to end of this program. "
+active=True
+while active:
+    message = input(prompt)
+    if message=='quit':
+        active=False
+    else:
+        print(message)
+
+#7.2.4 using break to exit a loop
+#while True开头的循环会的不断运行，直到遇到break
+#break不执行余下的代码并退出整个循环
+prompt="\nPlease enter the name of cities you have visited: "
+prompt+="\n(Enter 'quit' when you are finished.) "
+while True:
+    city=input(prompt)
+    if city=='quit':
+        break
+    else:
+        print("I'd love to go to "+city.title()+"!")
+
+#7.2.5 using continue in a loop
+#满足if条件时continue忽略剩下的代码返回代码的开头
+#不满足时继续执行余下的代码
+#break不执行余下的代码并退出整个循环
+current_number=0
+while current_number<10:
+    current_number+=1
+    if current_number % 2==0:
+        continue
+    print(current_number)
+
+#7.2.6 avoiding infinite loops
+#Ctrl+C关闭终端窗口(例如Pycharm里的Python Console)
+#务必对每个while循环进行测试
+
+#7.3 using a while loop with lists and dictionaries
+#7.3.1 moving items from a list to another
+
+
+
+
+
+
+
+
+
