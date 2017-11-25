@@ -39,7 +39,7 @@ while current_number<=5:
 #充分理解程序运行的顺序
 prompt="\nTell me something, and I will repeat it back to u: "
 prompt+="\nEnter 'quit' to end of this program. "
-message=""
+message="
 while message!='quit':
     message=input(prompt)
     if message!='quit':
@@ -49,8 +49,7 @@ while message!='quit':
 #同时input的位置也是错的，创建多行字符串的时候不应写入input()
 #prompt=input("\nTell me something, and I will repeat it back to u: ")
 #prompt+="\nEnter 'quit' to end of this program. "
-#while prompt!='quit':
-    #print(prompt)
+#while prompt!='quit':    #print(prompt)
 
 #7.2.3 using a flag 标志
 # 注意True和False首字母要大写
@@ -64,7 +63,6 @@ while active:
         active=False
     else:
         print(message)
-
 #7.2.4 using break to exit a loop
 #while True开头的循环会的不断运行，直到遇到break
 #break不执行余下的代码并退出整个循环
@@ -76,7 +74,6 @@ while True:
         break
     else:
         print("I'd love to go to "+city.title()+"!")
-
 #7.2.5 using continue in a loop
 #满足if条件时continue忽略剩下的代码返回代码的开头
 #不满足时继续执行余下的代码
@@ -87,16 +84,48 @@ while current_number<10:
     if current_number % 2==0:
         continue
     print(current_number)
-
 #7.2.6 avoiding infinite loops
 #Ctrl+C关闭终端窗口(例如Pycharm里的Python Console)
 #务必对每个while循环进行测试
 
+
 #7.3 using a while loop with lists and dictionaries
 #7.3.1 moving items from a list to another
+#for循环中不应修改列表
+unconfirmed_users=['alice','brian','candace']
+confirmed_users=[]
+while unconfirmed_users:
+    current_user=unconfirmed_users.pop()
+    print("Verifying user: "+current_user.title())
+    confirmed_users.append(current_user)
+print("\nThe following user have been confirmed:")
+for confirmed_user in confirmed_users:
+    print(confirmed_user.title())
+#while unconfirmed_users: 不断循环，直到unconfirmed_users变成空的
 
+#7.3.2 removing all instances of specific values from a list
+#pets
+pets=['dog','cat','dog','goldfish','cat','rabbit','cat']
+print(pets)
+while 'cat' in pets:
+    pets.remove('cat')
+print(pets)
 
-
+#7.3.3 filling a dictionary with user input
+#mountains_poll
+# responses[name]=response 添加键值对
+responses={}
+polling_active=True
+while polling_active:
+    name=input("\nWhat is your name? ")
+    response=input("which mountain would you like to climb someday? ")
+    responses[name]=response
+    repeat=input("Would you like to let another person respond?(yes/no)")
+    if repeat=='no':
+        polling_active=False
+print("\n--- Poll Results ---")
+for name,response in responses.items():
+    print(name+" would like to climb "+response+".")
 
 
 
