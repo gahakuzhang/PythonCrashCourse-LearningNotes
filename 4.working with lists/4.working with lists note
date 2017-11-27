@@ -57,6 +57,8 @@ print(yc_idols)
 
 #4.4 “操作列表”学习了如何切片、遍历切片以及在是否使用切片的情况下复制列表
 
+#4.5 Tuples元组
+#元组使用()而非[]，其中的元素不可修改
 #4.5.1 defining a tuple 定义元组
 dimensions=(200,50)
 print(dimensions[0])
