@@ -1,26 +1,26 @@
 #8.1 defining a function
 #greeter
 def greet_user():
-"""显示简单的问候语"""
-print("Hello!")
-greeter_user()
+    """显示简单的问候语"""
+    print("Hello!")
+greet_user()
 
 #8.1.1 passing information to a function
 #8.1.2 arguments实参 and parameters形参
 #username是形参，'jesse'是实参，实参是调用函数时传递给函数的信息
 def greet_user(username):
-"""显示简单的问候语"""
-print("Hello!"+username.title()+"!")
-greeter_user('jesse')
+    """显示简单的问候语"""
+    print("Hello!"+username.title()+"!")
+greet_user('jesse')
 
 #8.2 passing arguments 传递实参
 #8.2.1 positonal arguments 位置实参
 #基于实参的顺序
 #pets.py
 def describe_pet(animal_type,pet_name):
-"""显示宠物的信息"""
-print("\nI have a "+animal_type+".")
-print("My "+animal_type+"'s name is "+pet_name.tilte()+".")
+    """显示宠物的信息"""
+    print("\nI have a "+animal_type+".")
+    print("My "+animal_type+"'s name is "+pet_name.title()+".")
 describe_pet("hamster","harry")
 #可以调用函数多次，例如
 #describe_pet("hamster","harry")
@@ -28,23 +28,25 @@ describe_pet("hamster","harry")
 
 #8.2.2 keyword arguments 关键字实参
 def describe_pet(animal_type,pet_name):
-"""显示宠物的信息"""
-print("\nI have a "+animal_type+".")
-print("My "+animal_type+"'s name is "+pet_name.tilte()+".")
+    """显示宠物的信息"""
+    print("\nI have a "+animal_type+".")
+    print("My "+animal_type+"'s name is "+pet_name.title()+".")
 describe_pet(animal_type="hamster",pet_name="harry")
 #在实参中将名称和值对应
 
 #8.2.3 default values 默认值
-def describe_pet(animal_type="dog",pet_name):
-"""显示宠物的信息"""
-print("\nI have a "+animal_type+".")
-print("My "+animal_type+"'s name is "+pet_name.tilte()+".")
+#函数调用时只有一个实参pet_name，然而Python仍将其视为位置实参，会自动关联到第一个形参
+#因此需要将pet_name放到形参列表开头
+def describe_pet(pet_name,animal_type="dog"):
+    """显示宠物的信息"""
+    print("\nI have a "+animal_type+".")
+    print("My "+animal_type+"'s name is "+pet_name.title()+".")
 describe_pet(pet_name="willie")
 #describe_pet(animal_type="hamster",pet_name="harry")时Python将忽略默认值
 
 #8.2.4 equivalent function calls 等效的函数调用
-def describe_pet(pet_name,animal_name='dog')
-#以下调用等效
+def describe_pet(pet_name,animal_name='dog'):
+# 以下调用等效
 describe_pet('harry','hamster')
 describe_pet(pet_name="harry",animal_type="hamster")
 describe_pet(animal_type="hamster",pet_name="harry")
@@ -57,32 +59,31 @@ describe_pet(animal_type="hamster",pet_name="harry")
 #8.3.1 ruturning a simple value返回简单值
 #formatted_name.py
 def get_formatted_name(first_name,last_name):
-"""返回整洁的姓名"""
-full_name=first_name+" "+last_name
-return full_name.title()
+    """返回整洁的姓名"""
+    full_name=first_name+" "+last_name
+    return full_name.title()
 musician=get_formatted_name('hashimoto','nanami')
 print(musician)
 #调用返回值得函数时，需要提供一个变量，用于储存返回的值
 
 #8.3.2 making an argument optional
 def get_formatted_name(first_name,middle_name,last_name):
-"""返回整洁的姓名"""
-full_name=first_name+" "+middle_name+" "+last_name
-return full_name.title()
+    """返回整洁的姓名"""
+    full_name=first_name+" "+middle_name+" "+last_name
+    return full_name.title()
 musician=get_formatted_name('john','lee','nooker')
 print(musician)
-
 #将middle_name指定为默认值：空字符串，并移动到形参列表的末尾？？？
 #Python将非空字符串解读为True，如果函数调用中提供了middle name，if middle_name将为True
 #未提供middle name时，middle_name为空字符串，if测试无法通过，执行else代码块
 #如果要指定middle·name，必须确保其是最后一个实参，这样python才能正确地将位置实参关联到形参
-def get_formatted_name(first_name,middle_name='',last_name):
-"""返回整洁的姓名"""
-if middle_name:
-full_name=first_name+" "+middle_name+" "+last_name
-else:
-full_name=first_name+" "+last_name
-return full_name.title()
+def get_formatted_name(first_name,last_name,middle_name=''):
+    """返回整洁的姓名"""
+    if middle_name:
+        full_name=first_name+" "+middle_name+" "+last_name
+    else:
+        full_name=first_name+" "+last_name
+    return full_name.title()
 musician=get_formatted_name('john','lee','nooker')
 print(musician)
 musician=get_formatted_name('hashimoto','nanami')
@@ -92,27 +93,54 @@ print(musician)
 #函数可返回任何类型的值，包括列表、字典等
 #person.py
 def build_person(first_name,last_name):
-"""返回一个字典，包含一个人的信息"""
-person={'first':first_name,'last':last_name}
-return person
+    """返回一个字典，包含一个人的信息"""
+    person={'first':first_name,'last':last_name}
+    return person
 musician=build_person('jimi','hendeix')
 print(musician)
 
 #person['age']=age是添加键值对
 def build_person(first_name,last_name,age=''):
-"""返回一个字典，包含一个人的信息"""
-person={'first':first_name,'last':last_name}
-if age:
-person['age']=age
-return person
+    """返回一个字典，包含一个人的信息"""
+    person={'first':first_name,'last':last_name}
+    if age:
+        person['age']=age
+    return person
 musician=build_person('jimi','hendeix',age=27)
 print(musician)
 
-8.3.4 using a function with  a while loop结合使用函数和while循环
+#8.3.4 using a function with a while loop结合使用函数和while循环
+#将用户输入值作为实参
 def get_formatted_name(first_name,last_name):
-"""返回整洁的姓名"""
-full_name=first_name+" "+last_name
-return full_name.title()
+    """返回整洁的姓名"""
+    full_name=first_name+" "+last_name
+    return full_name.title()
+#这是一个无限循环
+while True:
+    print("\nPlease tell me your name:")
+    f_name=input("First name: ")
+    l_name=input("Last name: ")
+    formatted_name=get_formatted_name(f_name,l_name)
+    print("\nHello, "+formatted_name+"!")
+
+#使用break退出
+#将用户输入值作为实参
+def get_formatted_name(first_name,last_name):
+    """返回整洁的姓名"""
+    full_name=first_name+" "+last_name
+    return full_name.title()
+while True:
+    print("\nPlease tell me your name:")
+    print("(enter 'q' at any time to quit)")
+    f_name=input("First name: ")
+    if f_name=='q':
+        break
+    l_name=input("Last name: ")
+    if l_name=='q':
+        break
+    formatted_name=get_formatted_name(f_name,l_name)
+    print("\nHello, "+formatted_name+"!")
+
 
 
 
