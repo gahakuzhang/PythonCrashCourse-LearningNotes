@@ -1,5 +1,5 @@
 #6.3.2 遍历所有键
-#使用keys(),key()可以省略
+#使用keys(),keys()可以省略
 favorite_idols={
     'ghk':'nachan',
     'yc':'kazumin',
