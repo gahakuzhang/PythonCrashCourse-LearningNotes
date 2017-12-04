@@ -73,10 +73,11 @@ def get_formatted_name(first_name,middle_name,last_name):
     return full_name.title()
 musician=get_formatted_name('john','lee','nooker')
 print(musician)
-#将middle_name指定为默认值：空字符串，并移动到形参列表的末尾？？？
-#Python将非空字符串解读为True，如果函数调用中提供了middle name，if middle_name将为True
-#未提供middle name时，middle_name为空字符串，if测试无法通过，执行else代码块
-#如果要指定middle name，必须确保其是最后一个实参，这样python才能正确地将位置实参关联到形参
+
+# 将middle_name指定为默认值：空字符串，并移动到形参列表的末尾
+# Python将非空字符串解读为True，如果函数调用中提供了middle name，if middle_name将为True
+# 未提供middle name时，middle_name为空字符串，if测试无法通过，执行else代码块
+# 如果要指定middle name，必须确保其是最后一个实参，这样python才能正确地将位置实参关联到形参
 def get_formatted_name(first_name,last_name,middle_name=''):
     """返回整洁的姓名"""
     if middle_name:
@@ -109,8 +110,8 @@ def build_person(first_name,last_name,age=''):
 musician=build_person('jimi','hendeix',age=27)
 print(musician)
 
-#8.3.4 using a function with a while loop结合使用函数和while循环
-#将用户输入值作为实参
+# 8.3.4 using a function with a while loop 结合使用函数和while循环
+# 将用户输入值作为实参
 def get_formatted_name(first_name,last_name):
     """返回整洁的姓名"""
     full_name=first_name+" "+last_name
@@ -165,9 +166,9 @@ print("\nThe following models have been printed:")
 for completed_model in completed_models:
     print(completed_model)
 
-#使用函数
-#第一个函数负责处理打印设计，第二个函数将概述打印了哪些设计
-#每个函数只负责一项具体工作。程序执行的任务太多时，可以尝试将函数划分到多个函数中
+# 使用函数
+# 第一个函数负责处理打印设计，第二个函数将概述打印了哪些设计
+# 每个函数只负责一项具体工作。程序执行的任务太多时，可以尝试将函数划分到多个函数中
 def print_models(unprinted_designs,completed_models):
     while unprinted_designs:
         current_design = unprinted_designs.pop()
@@ -177,31 +178,32 @@ def show_completed_models(completed_models):
     print("\nThe following models have been printed:")
     for completed_model in completed_models:
         print(completed_model)
-#以下为主程序，更加清晰
+# 以下为主程序，更加清晰
 unprinted_designs=['iphone case','robot pendant','dodecahedron']
 completed_models=[]
 print_models(unprinted_designs,completed_models)
 show_completed_models(completed_models)
 
-#8.4.2 preventing a function from modifying a list
-#向函数传递列表的切片
-#function_name(list_name[:])
-#例如print_models(unprinted_designs[:],completed_models)
-#函数所做的修改不会影响unprinted_designs
-#一般还是使用原本而非副本，节约时间和内存
+# 8.4.2 preventing a function from modifying a list
+# 向函数传递列表的切片
+# function_name(list_name[:])
+# 例如print_models(unprinted_designs[:],completed_models)
+# 函数所做的修改不会影响unprinted_designs
+# 一般还是使用原本而非副本，节约时间和内存
 
 
-#8.5 passing on arbitraty number of arguments 传递任意数量的实参
-#pizza.py
+# 8.5 passing on arbitraty number of arguments 传递任意数量的实参
+# 预先无法确定实参的数目
+# pizza.py
 def make_pizza(*toppings):
     """打印顾客点的所有配料"""
     print(toppings)
 make_pizza('pepperoni')
 make_pizza('mushrooms','green peppers','extra cheese')
-#*toppnigs 是生成一个名为toppings的空元组，并将所有值封装入该元组
+# *toppnigs 是生成一个名为toppings的空元组，并将所有值封装入该元组
 # 结果为('pepperoni',)，('mushrooms', 'green peppers', 'extra cheese')
 
-#对配料列表进行遍历
+# 对配料列表进行遍历
 def make_pizza(*toppings):
     """概述所要制作的pizza"""
     print("\nMaking a pizza with the following toppings: ")
@@ -210,10 +212,10 @@ def make_pizza(*toppings):
 make_pizza('pepperoni')
 make_pizza('mushrooms','green peppers','extra cheese')
 
-#8.5.1 mixing positional and arbitrary arguments 结合使用位置实参和任意数量实参
-#必须将接纳任意数量实参的形参放在最后
-#Python先匹配位置实参和关键字实参，再将余下所有实参放到最后一个形参中
-#本例中，size必须放在*toppings前面
+# 8.5.1 mixing positional and arbitrary arguments 结合使用位置实参和任意数量实参
+# 必须将接纳任意数量实参的形参放在最后
+# Python先匹配位置实参和关键字实参，再将余下所有实参放到最后一个形参中
+# 本例中，size必须放在*toppings前面
 def make_pizza(size,*toppings):
     """概述所要制作的pizza"""
     print("\nMaking a "+str(size)+"-inch pizza with the following toppings: ")
@@ -222,8 +224,9 @@ def make_pizza(size,*toppings):
 make_pizza(16,'pepperoni')
 make_pizza(12,'mushrooms','green peppers','extra cheese')
 
-#8.5.2 using arbitrary keyword arguments 使用任意数量的关键字实参
-#user_profile.py
+# 8.5.2 using arbitrary keyword arguments 使用任意数量的关键字实参
+# user_profile.py
+# **user_info是创建一个空字典，并将收到的所有键值对都封装到这个空字典中
 def build_profile(first,last,**user_info):
     """创建一个字典，包含我们所知道的用户的一切"""
     profile={}
@@ -236,31 +239,31 @@ user_profile=build_profile('albert','einstein',
                            location='princeton',
                            field='physics')
 print(user_profile)
-#返回字典
+# 返回字典
 
-#8.6 storing functions in modules 将函数储存在模块中
-#8.6.1 importing an entire module
-#module是.py文件
-#pizza.py
+# 8.6 storing functions in modules 将函数储存在模块中
+# 8.6.1 importing an entire module
+# module是.py文件
+# pizza.py
 def make_pizza(size,*toppings):
     """概述所要制作的pizza"""
     print("\nMaking a "+str(size)+"-inch pizza with the following toppings: ")
     for topping in toppings:
         print("-"+topping)
-#8.6.1 making_pizzas.py
+# 8.6.1 making_pizzas.py
 import pizza
 pizza.make_pizza(16,'pepperoni')
 pizza.make_pizza(12,'mushrooms','green peppers','extra cheese')
-#使用import语句导入module_name，并使用module_name.function_name()，句点表示法
-#注意import module_name后不加py
-#pizza.py和making_pizzas.py必须在同一个文件夹
+# 使用import语句导入module_name，并使用module_name.function_name()，句点表示法
+# 注意import module_name后不加py
+# pizza.py和making_pizzas.py必须在同一个文件夹
 
-#8.6.2 importing specific functions 导入特定的函数
-#导入模块中的特定函数
-#from module_name import function_name
-#from module_name import function_0,function_1,fucntion_2
-#以前面的making_pizza.py为例
-#pizza.py和making_pizzas.py必须在同一个文件夹
+# 8.6.2 importing specific functions 导入特定的函数
+# 导入模块中的特定函数
+# from module_name import function_name
+# from module_name import function_0,function_1,fucntion_2
+# 以前面的making_pizza.py为例
+# pizza.py和making_pizzas.py必须在同一个文件夹
 from pizza import make_pizza
 make_pizza(16,'pepperoni')
 make_pizza(12,'mushrooms','green peppers','extra cheese')
@@ -270,8 +273,8 @@ make_pizza(12,'mushrooms','green peppers','extra cheese')
 #from module_name import function_name as fn
 #避免名称冲突或者函数名称太长
 from pizza import make_pizza as mp
-make_pizza(16,'pepperoni')
-make_pizza(12,'mushrooms','green peppers','extra cheese')
+mp(16,'pepperoni')
+mp(12,'mushrooms','green peppers','extra cheese')
 
 #8.6.4 using as to give a module an alias 使用as为模块指定别名
 #import module_name as mn
