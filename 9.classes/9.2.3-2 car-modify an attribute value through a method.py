@@ -45,6 +45,3 @@ class Car():
             self.odometer_reading=mileage
         else:
             print("You can't roll back an odometer!")
-
-# incrementing an attibute's value through a method 通过方法对属性的值进行递增
-
