@@ -32,6 +32,22 @@ print(idols[2:]) #从第3个打印到最后，['nachan', 'maiyan', 'rentan', 'yu
 print(idols[-2:]) #从倒数第2个打印到最后，['rentan', 'yuki']
 print(idols[0:3])
 
+# 《利用python进行数据分析第2版》第3章
+# In [73]: seq = [7, 2, 3, 7, 5, 6, 0, 1]
+# In [74]: seq[1:5]
+# Out[74]: [2, 3, 7, 5]
+# 切片也可以被序列赋值：
+# In [75]: seq[3:4] = [6, 3]
+# In [76]: seq
+# Out[76]: [7, 2, 3, 6, 3, 5, 6, 0, 1]
+# 切片的起始元素是包括的，不包含结束元素。因此，结果中包含的元素个数是stop - start。
+# 负数表明从后向前切片：
+# In [79]: seq[-4:]
+# Out[79]: [5, 6, 0, 1]
+# In [80]: seq[-6:-2]
+# Out[80]: [6, 3, 5, 6]
+
+
 #4.4.2 Looping through a slice 遍历切片
 idols=['nanamin','miona','nachan','maiyan','rentan','yuki']
 print('Here are my favorite three members in this group:')
